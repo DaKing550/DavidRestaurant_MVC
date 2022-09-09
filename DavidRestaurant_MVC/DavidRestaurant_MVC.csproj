@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-DavidRestaurant_MVC-C3DEB1F9-9A8A-4E01-8C97-472BDF8EBF35</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DavidRestaurant.Data\DavidRestaurant.Data.csproj" />
+    <ProjectReference Include="..\DavidRestaurant.Models\DavidRestaurant.Models.csproj" />
+    <ProjectReference Include="..\DavidRestaurant.Services\DavidRestaurant.Services.csproj" />
+  </ItemGroup>
+
+</Project>

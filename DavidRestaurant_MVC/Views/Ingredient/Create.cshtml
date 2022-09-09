@@ -1,0 +1,39 @@
+﻿@model DavidRestaurant.Models.Ingredients.IngredientCreate
+@{
+    ViewData["Title"] = "Create An Ingredient";
+}
+<h1> Create An Ingredient</h1>
+<hr />
+@using (Html.BeginForm())
+{
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="IngredientName" class="control-label"></label>
+        <input asp-for="IngredientName" class="form-control" />
+        <span asp-validation-for="IngredientName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AmountOfIngredient" class="control-label"></label>
+        <input asp-for="AmountOfIngredient" class="form-control" />
+        <span asp-validation-for="AmountOfIngredient" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PriceOfIngredient" class="control-label"></label>
+        <input asp-for="PriceOfIngredient" class="form-control" />
+        <span asp-validation-for="PriceOfIngredient" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+}
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,48 @@
+﻿@model DavidRestaurant.Models.RecipeItems.RecipeItemCreate
+@using DavidRestaurant.Data.Entities
+
+@{
+    ViewData["Title"] = "Create";
+    var selectListMenuItem = new SelectList(Model.MenuItems, nameof(MenuItem.Id), nameof(MenuItem.Name));
+    var selectListIngredient = new SelectList(Model.Ingredients, nameof(Ingredient.Id), nameof(Ingredient.IngredientName));
+}
+
+<h1>Create</h1>
+
+<h4>RecipeItemCreate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AmountOfIngredient" class="control-label"></label>
+                <input asp-for="AmountOfIngredient" class="form-control" />
+                <span asp-validation-for="AmountOfIngredient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MenuItemId" class="control-label"></label>
+                <select name="MenuItemId" asp-items="selectListMenuItem"></select>
+                @*<input asp-for="MenuItemId" class="form-control" />*@
+                <span asp-validation-for="MenuItemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IngredientId" class="control-label"></label>
+                <select name="IngredientId" asp-items="selectListIngredient"></select>
+                @*<input asp-for="IngredientId" class="form-control" />*@
+                <span asp-validation-for="IngredientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
